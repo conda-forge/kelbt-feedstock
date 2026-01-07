@@ -14,7 +14,7 @@ source:
 
 build:
   skip: win
-  number: 0
+  number: 1
   script:
     file: build-kelbt
 
@@ -24,6 +24,9 @@ requirements:
     - ${{ compiler("cxx") }}
     - ${{ stdlib("c") }}
     - make
+    - if: linux
+      then:
+        - gnuconfig
 
 tests:
   - script:
