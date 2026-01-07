@@ -24,6 +24,9 @@ requirements:
     - ${{ compiler("cxx") }}
     - ${{ stdlib("c") }}
     - make
+    - if: linux
+      then:
+        - gnuconfig
 
 tests:
   - script:
